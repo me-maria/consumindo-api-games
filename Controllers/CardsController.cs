@@ -1,8 +1,6 @@
 ﻿using ConsumindoAPIDeGames.Model;
 using Microsoft.AspNetCore.Mvc;
-using Newtonsoft;
 using Newtonsoft.Json;
-using System.Globalization;
 using X.PagedList;
 
 namespace ConsumindoAPIDeGames.Controllers
@@ -11,15 +9,18 @@ namespace ConsumindoAPIDeGames.Controllers
     {
         private readonly string ENDPOINT = "https://api.magicthegathering.io/v1/cards";
         private readonly HttpClient _httpClient = null;
-        private List<Card> _cards = null;
+        private static List<Card> _cards = null;
 
         public CardsController()
         {
             _httpClient = new HttpClient();
             _httpClient.BaseAddress = new Uri(ENDPOINT);
         }
-        public async  Task<IActionResult> Index()
+        public async  Task<IActionResult> Index(int? page)
         {
+            var itemsByPage = 10;
+            var currentPage = page ?? 1;
+
             MagicCardsViewModel cardList = null;
             _cards = new List<Card>();
             try
@@ -45,7 +46,15 @@ namespace ConsumindoAPIDeGames.Controllers
                 String msg = ex.Message;
                 throw;
             }
-            return View(cardList.cards);
+
+            return View(await cardList.cards.ToPagedListAsync(currentPage, itemsByPage));
+            //return View(cardList.cards);
+        }
+        [HttpGet]
+        public IActionResult Details(string id)
+        {
+            Card card = _cards.FirstOrDefault(c => c.id.Equals(id));
+            return View(card);
         }
     }
 }

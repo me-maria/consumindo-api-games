@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "1NjAn0aS64moOQswOxz/nYd3Bn11eemzukjaxwro515RiL/sXvSqzEgEtFPNTSkJ4d/9b3XislcwwQbkMtHFcg==",
+  "dgSpecHash": "/yL+CaLquxcRAoSJOwalHrAf06kZ938NpWWXMzsOwwgy/9Izgf5JiIQExdgFJg3s21EU+vRG0wNYQuCVF4/29w==",
   "success": true,
   "projectFilePath": "C:\\Users\\maria\\OneDrive\\Documentos\\APIs\\ConsumindoAPIDeGames\\ConsumindoAPIDeGames.csproj",
   "expectedPackageFiles": [
@@ -194,7 +194,8 @@
     "C:\\Users\\maria\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512",
     "C:\\Users\\maria\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\maria\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\maria\\.nuget\\packages\\x.pagedlist\\8.4.7\\x.pagedlist.8.4.7.nupkg.sha512"
+    "C:\\Users\\maria\\.nuget\\packages\\x.pagedlist\\8.4.7\\x.pagedlist.8.4.7.nupkg.sha512",
+    "C:\\Users\\maria\\.nuget\\packages\\x.pagedlist.mvc.core\\8.4.7\\x.pagedlist.mvc.core.8.4.7.nupkg.sha512"
   ],
   "logs": []
 }

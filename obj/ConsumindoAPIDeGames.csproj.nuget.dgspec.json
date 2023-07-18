@@ -49,7 +49,7 @@
               "target": "Package",
               "version": "[13.0.3, )"
             },
-            "X.PagedList": {
+            "X.PagedList.Mvc.Core": {
               "target": "Package",
               "version": "[8.4.7, )"
             }
