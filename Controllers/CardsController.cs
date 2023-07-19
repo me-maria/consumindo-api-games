@@ -21,10 +21,12 @@ namespace ConsumindoAPIDeGames.Controllers
             var itemsByPage = 10;
             var currentPage = page ?? 1;
 
-            MagicCardsViewModel cardList = null;
-            _cards = new List<Card>();
+
             try
             {
+                MagicCardsViewModel cardList = null;
+                _cards = new List<Card>();
+
                 var response = await _httpClient.GetAsync(ENDPOINT);
 
                 if (response.IsSuccessStatusCode) {
@@ -40,6 +42,7 @@ namespace ConsumindoAPIDeGames.Controllers
                 {
                     ModelState.AddModelError(null, "Erro ao processar o Magic!");
                 }
+                return View(await cardList.cards.ToPagedListAsync(currentPage, itemsByPage));
             }
             catch (Exception ex)
             {
@@ -47,7 +50,6 @@ namespace ConsumindoAPIDeGames.Controllers
                 throw;
             }
 
-            return View(await cardList.cards.ToPagedListAsync(currentPage, itemsByPage));
             //return View(cardList.cards);
         }
         [HttpGet]
